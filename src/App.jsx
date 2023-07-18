@@ -1,11 +1,16 @@
-function App() {
-  const [count, setCount] = useState(0)
+import React from 'react';
+import Navbar from './components/Navbar';
+import MainContainer from './components/MainContainer';
+import Footer from './components/Footer';
 
+function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Navbar />
+      <MainContainer />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
