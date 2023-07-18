@@ -1,8 +1,17 @@
-const Card = ({ skill }) => {
+const Card = ({ skill, color }) => {
+    const cardStyle = {
+      backgroundColor: color,
+    };
+
+
   return (
-    <div className="card">
-      <h3>{skill}</h3>
-    </div>
+
+    <>
+        <div className="card" style={cardStyle}>
+            <h3>{skill}</h3>
+        </div>
+    </>
+    
   );
 };
 
