@@ -1,23 +1,52 @@
-import Card from './Card';
-import './MainContainer.css';
+import ProductItem from "./ProductItem";
 
 const MainContainer = () => {
-  const skills = ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Video Editing', 'Graphic Design'];
-  const colors = ['#0000FF', '#FF0000', '#00FF00', '#FFFF00', '#00FFFF'];
+  const products = [
+    {
+      title: 'iPhone 9',
+      description: 'An apple mobile which is nothing like apple', 
+      imageUrl: 'https://i.dummyjson.com/data/products/1/thumbnail.jpg',
+      isSale: true
+    },
+    {
+      title: 'iPhone x',
+      description: 'IM-Free, Model A19211 6.5-inch Super Retina HD display with OLED', 
+      imageUrl: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+      isSale: true
+    },
+    {
+      title: 'Samsung Universe 9',
+      description: 'Samsung\'s new variant that go beyond galaxy to the Universe', 
+      imageUrl: 'https://i.dummyjson.com/data/products/3/thumbnail.jpg',
+      isSale: false
+    },
+    {
+      title: 'OPPOF19',
+      description: 'OPPO F19 is officially announced on April 2021.', 
+      imageUrl: 'https://i.dummyjson.com/data/products/4/thumbnail.jpg',
+      isSale: true
+    },
+    {
+      title: 'Huawei P30',
+      description: 'Huawei\'s rebadged P30 Pro New Edition was officially unvieled yesterday in Germany and now the device has made its way to the UK.', 
+      imageUrl: 'https://i.dummyjson.com/data/products/5/thumbnail.jpg',
+      isSale: false
+    }
+  ]
+
+  const ProductItemList = products.map(
+    product => <ProductItem title={product.title} description={product.description} imageUrl={product.imageUrl} isSale={product.isSale}/>
+    )
 
   return (
     <>
-       <div className="main-container">
-          <h1>Main Container</h1>
-          <div className="card-container">
-            {skills.map((skill, index) => (
-            <Card key={index} skill={skill} color={colors[index]} />
-            ))}
-        </div>
-      </div>
+    <div className="d-flex">
+      {ProductItemList}
+    </div>
+    
     </>
    
-  );
+  )
 };
 
 export default MainContainer;
